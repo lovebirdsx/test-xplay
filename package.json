@@ -1,0 +1,47 @@
+{
+  "name": "test-xplay",
+  "version": "1.0.0",
+  "description": "TypeScript project scaffold with tests, lint, and formatting",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx src/cli.tsx",
+    "dev:watch": "tsx watch src/cli.tsx",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --check",
+    "format:write": "prettier . --write"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lovebirdsx/test-xplay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  },
+  "bugs": {
+    "url": "https://github.com/lovebirdsx/test-xplay/issues"
+  },
+  "homepage": "https://github.com/lovebirdsx/test-xplay#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.3",
+    "typescript-eslint": "^8.29.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  }
+}
