@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsx src/cli.tsx",
-    "dev:watch": "tsx watch src/cli.tsx",
+    "dev:watch": "tsx watch src/cli.tsx --dangerously-skip-permissions -v \"Hello World!\"",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
