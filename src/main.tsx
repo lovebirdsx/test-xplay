@@ -89,6 +89,52 @@ export function createProgram() {
             }
         });
 
+    program.command('env [filter]')
+        .description('Display environment information')
+        .action((filter) => {
+            console.log('Environment information:');
+            for (const [key, value] of Object.entries(process.env)) {
+                if (!filter || key.includes(filter)) {
+                    console.log(`${key}: ${value}`);
+                }
+            }
+        });
+
+    program.command('simple-query')
+        .description('Run a simple query against the Anthropic API')
+        .action(async () => {
+            const { simpleQuery } = await import('./simpleQuery.js');
+            await simpleQuery();
+        });
+
+    program.command('stream-query')
+        .description('Run a streaming query against the Anthropic API')
+        .action(async () => {
+            const { streamQuery } = await import('./streamQuery.js');
+            await streamQuery();
+        });
+
+    program.command('structured-output')
+        .description('Run a query with structured output against the Anthropic API')
+        .action(async () => {
+            const { structuredOutput } = await import('./structuredOutput.js');
+            await structuredOutput();
+        });
+
+    program.command('use-tool')
+        .description('Run a query that uses a tool against the Anthropic API')
+        .action(async () => {
+            const { useTool } = await import('./useTool.js');
+            await useTool();
+        });
+
+    program.command('count-tokens')
+        .description('Count tokens for a given input using the Anthropic API')
+        .action(async () => {
+            const { countTokens } = await import('./countTokens.js');
+            await countTokens();
+        });
+
     return program;
 }
 
